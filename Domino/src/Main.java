@@ -5,20 +5,18 @@ public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		long start = System.currentTimeMillis();
-		int n = Integer.parseInt(args[0]);		
-		DominoSet domies = new DominoSet(n);
+		long start = System.currentTimeMillis();     	//time start
+		int n = Integer.parseInt(args[0]);		//quantity of dominoes which should be calculated
+		DominoSet domies = new DominoSet(n);		//creating new dominoes set for calculation
 		System.out.println(domies.dominoesToString());
-		ArrayList<DominoSet> chains = findMaxChain(n, domies);		
+		ArrayList<DominoSet> chains = findMaxChain(n, domies);	// creating ArrayList of chains with maximum length
 		
-		for(DominoSet doms : chains) {
-			System.out.println("Цепочка: " + doms.getChain().toString() + " оставшиеся кости: " + doms.dominoesToString());
+		for(DominoSet doms : chains) {   		//print all chains with max length
+			System.out.println("Chain: " + doms.getChain().toString() + " Remained dominoes: " + doms.dominoesToString());
 		}
-		long stop = System.currentTimeMillis();		
-		System.out.println("Колличество доминошек: " + n +"\nКолличество цепочек: " + chains.size() + "\nМаксимальная длина цепочек: " + chains.get(0).getChain().getSize() + "\nВремя расчета: " + (stop - start) + " ms");
-		
-		
-				
+		long stop = System.currentTimeMillis();		//time stop
+		System.out.println("Quantity of dominoes: " + n +"\nQantity of chains: " + chains.size() + "\nMaximum Length of Chains: " + chains.get(0).getChain().getSize() + "\nCalculation time: " + (stop - start) + " ms");
+					
 	}
 	
 
@@ -47,7 +45,7 @@ public class Main {
 				dominoChains.add(k);
 			count++;
 			long stopNext = System.currentTimeMillis();
-			System.out.println("длина цепей: " + count + "  время расчета: " + (stopNext - start) + " ms");
+			System.out.println("Г¤Г«ГЁГ­Г  Г¶ГҐГЇГҐГ©: " + count + "  ГўГ°ГҐГ¬Гї Г°Г Г±Г·ГҐГІГ : " + (stopNext - start) + " ms");
 			start = System.currentTimeMillis();			
 		}
 		
