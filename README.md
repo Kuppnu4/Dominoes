@@ -1,2 +1,2 @@
 # Dominoes
-Java application bilding chain from dominoes
+Java application bilding chains from dominoes
